@@ -1,0 +1,2 @@
+# sanctusstatic.github.io
+Privacy
