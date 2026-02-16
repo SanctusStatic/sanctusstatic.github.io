@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StaticLine Logistics Group LLC</title>
+    <meta name="description" content="StaticLine Logistics Group LLC — Veteran-owned mobile app development. Makers of Sanctus, a Traditional Latin Mass companion app.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --cream: #F5F0E8;
+            --dark: #1A1A1A;
+            --burgundy: #6B1D2A;
+            --gold: #B8960C;
+            --gold-light: #D4AF37;
+            --text: #2C2C2C;
+            --text-muted: #6B6B6B;
+            --border: #D6CFC0;
+        }
+
+        body {
+            font-family: 'Lato', sans-serif;
+            background-color: var(--cream);
+            color: var(--text);
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Subtle paper texture */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100' height='100' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .container {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Header */
+        header {
+            padding: 60px 0 40px;
+            text-align: center;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .logo-mark {
+            display: inline-block;
+            width: 48px;
+            height: 48px;
+            border: 2px solid var(--burgundy);
+            border-radius: 4px;
+            position: relative;
+            margin-bottom: 24px;
+        }
+
+        .logo-mark::before {
+            content: 'SL';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-family: 'EB Garamond', serif;
+            font-weight: 700;
+            font-size: 20px;
+            color: var(--burgundy);
+            letter-spacing: 1px;
+        }
+
+        .company-name {
+            font-family: 'EB Garamond', serif;
+            font-size: 28px;
+            font-weight: 600;
+            color: var(--dark);
+            letter-spacing: 0.5px;
+            margin-bottom: 8px;
+        }
+
+        .tagline {
+            font-size: 14px;
+            font-weight: 300;
+            color: var(--text-muted);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        /* Main content */
+        main {
+            padding: 48px 0;
+        }
+
+        .section {
+            margin-bottom: 48px;
+        }
+
+        .section:last-child {
+            margin-bottom: 0;
+        }
+
+        h2 {
+            font-family: 'EB Garamond', serif;
+            font-size: 20px;
+            font-weight: 600;
+            color: var(--burgundy);
+            margin-bottom: 16px;
+            letter-spacing: 0.3px;
+        }
+
+        p {
+            font-size: 16px;
+            color: var(--text);
+            margin-bottom: 12px;
+            font-weight: 300;
+        }
+
+        p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* App card */
+        .app-card {
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 32px;
+            margin-top: 24px;
+        }
+
+        .app-card-header {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 16px;
+        }
+
+        .app-icon {
+            width: 56px;
+            height: 56px;
+            background: linear-gradient(135deg, var(--burgundy), #4A1018);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .app-icon span {
+            font-family: 'EB Garamond', serif;
+            color: var(--gold-light);
+            font-size: 22px;
+            font-weight: 700;
+        }
+
+        .app-name {
+            font-family: 'EB Garamond', serif;
+            font-size: 22px;
+            font-weight: 600;
+            color: var(--dark);
+        }
+
+        .app-subtitle {
+            font-size: 14px;
+            color: var(--text-muted);
+            font-weight: 300;
+        }
+
+        .app-description {
+            font-size: 15px;
+            color: var(--text);
+            font-weight: 300;
+            line-height: 1.8;
+        }
+
+        .badge {
+            display: inline-block;
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: var(--gold);
+            background: rgba(184, 150, 12, 0.1);
+            padding: 4px 12px;
+            border-radius: 4px;
+            margin-top: 16px;
+        }
+
+        /* Divider */
+        .divider {
+            width: 40px;
+            height: 1px;
+            background: var(--border);
+            margin: 0 auto;
+        }
+
+        /* Footer */
+        footer {
+            border-top: 1px solid var(--border);
+            padding: 40px 0;
+            text-align: center;
+        }
+
+        .footer-location {
+            font-size: 13px;
+            color: var(--text-muted);
+            font-weight: 300;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+        }
+
+        .footer-contact {
+            font-size: 14px;
+            color: var(--text-muted);
+            font-weight: 300;
+        }
+
+        .footer-contact a {
+            color: var(--burgundy);
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.2s;
+        }
+
+        .footer-contact a:hover {
+            border-bottom-color: var(--burgundy);
+        }
+
+        .footer-legal {
+            font-size: 12px;
+            color: var(--text-muted);
+            margin-top: 24px;
+            font-weight: 300;
+        }
+
+        .privacy-link {
+            color: var(--text-muted);
+            text-decoration: none;
+            border-bottom: 1px solid var(--border);
+            transition: color 0.2s;
+        }
+
+        .privacy-link:hover {
+            color: var(--burgundy);
+        }
+
+        /* Responsive */
+        @media (max-width: 480px) {
+            header {
+                padding: 40px 0 32px;
+            }
+
+            .company-name {
+                font-size: 24px;
+            }
+
+            .app-card {
+                padding: 24px;
+            }
+
+            main {
+                padding: 36px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <div class="logo-mark"></div>
+            <h1 class="company-name">StaticLine Logistics Group LLC</h1>
+            <p class="tagline">Veteran-Owned &middot; Mobile App Development</p>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+
+            <div class="section">
+                <h2>About</h2>
+                <p>StaticLine Logistics Group is a veteran-owned software company based in Ocala, Florida. We build beautiful, offline-first mobile applications for communities rooted in tradition, discipline, and daily practice.</p>
+                <p>Founded by a U.S. Army veteran, our mission is to create tools that serve focused communities with the quality and attention they deserve.</p>
+            </div>
+
+            <div class="section">
+                <h2>Our Apps</h2>
+
+                <div class="app-card">
+                    <div class="app-card-header">
+                        <div class="app-icon"><span>S</span></div>
+                        <div>
+                            <div class="app-name">Sanctus</div>
+                            <div class="app-subtitle">Traditional Latin Mass Companion</div>
+                        </div>
+                    </div>
+                    <p class="app-description">A free companion app for the Traditional Latin Mass. Sanctus provides a liturgical calendar, prayer alarms, the Holy Rosary with bead-by-bead guidance, Stations of the Cross, the Divine Mercy Chaplet, and fasting discipline reference — all designed with the reverence and beauty the traditional liturgy deserves. Fully offline. No account required. No data collected.</p>
+                    <div class="badge">Coming Soon</div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>Our Approach</h2>
+                <p>Every app we build follows the same principles: offline-first so it works anywhere, free core features that never get paywalled, no data collection, no ads, and a design language that respects the community it serves.</p>
+            </div>
+
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p class="footer-location">Ocala, Florida</p>
+            <p class="footer-contact">Contact: <a href="mailto:contact@sanctusstatic.github.io">sanctusstatic@gmail.com</a></p>
+            <p class="footer-legal">
+                &copy; 2026 StaticLine Logistics Group LLC. All rights reserved.
+                &nbsp;&middot;&nbsp;
+                <a href="privacy.html" class="privacy-link">Privacy Policy</a>
+            </p>
+        </div>
+    </footer>
+
+</body>
+</html>
