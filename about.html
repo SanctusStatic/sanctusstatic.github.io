@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sanctus — About & Important Notices</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Uncial+Antiqua&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --parchment:   #F5F0E8;
+      --parchment2:  #EDE6D6;
+      --parchment3:  #E2D9C6;
+      --burgundy:    #8B1A1A;
+      --burgundy2:   #6B1212;
+      --gold:        #C9A96E;
+      --gold2:       #A8884A;
+      --ink:         #2A1F14;
+      --ink-light:   #5A4A2F;
+      --rule:        rgba(139,26,26,0.18);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background-color: var(--parchment);
+      background-image:
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+      color: var(--ink);
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-weight: 400;
+      line-height: 1.75;
+      min-height: 100vh;
+    }
+
+    /* ── HEADER ── */
+    header {
+      text-align: center;
+      padding: 4rem 2rem 2.5rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    header::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(201,169,110,0.13) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .cross {
+      display: block;
+      font-size: 1.6rem;
+      color: var(--burgundy);
+      letter-spacing: 0.15em;
+      margin-bottom: 1.2rem;
+      opacity: 0.7;
+      animation: fadeDown 1s ease both;
+    }
+
+    .app-name {
+      font-family: 'Uncial Antiqua', serif;
+      font-size: clamp(2.8rem, 8vw, 5rem);
+      color: var(--burgundy);
+      letter-spacing: 0.04em;
+      line-height: 1.1;
+      animation: fadeDown 1s ease 0.1s both;
+    }
+
+    .app-tagline {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1rem, 2.5vw, 1.25rem);
+      font-weight: 300;
+      font-style: italic;
+      color: var(--ink-light);
+      margin-top: 0.6rem;
+      letter-spacing: 0.06em;
+      animation: fadeDown 1s ease 0.2s both;
+    }
+
+    .header-rule {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      max-width: 480px;
+      margin: 2rem auto 0;
+      animation: fadeDown 1s ease 0.3s both;
+    }
+    .header-rule::before,
+    .header-rule::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: linear-gradient(to right, transparent, var(--gold), transparent);
+    }
+    .header-rule span {
+      color: var(--gold2);
+      font-size: 1.1rem;
+    }
+
+    /* ── NAV ── */
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.4rem 1.2rem;
+      padding: 1.5rem 2rem;
+      border-top: 1px solid var(--rule);
+      border-bottom: 1px solid var(--rule);
+      background: rgba(237,230,214,0.5);
+      animation: fadeIn 1s ease 0.4s both;
+    }
+
+    nav a {
+      font-size: 0.82rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--burgundy2);
+      text-decoration: none;
+      padding: 0.25rem 0.1rem;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.2s, color 0.2s;
+    }
+    nav a:hover {
+      border-bottom-color: var(--gold);
+      color: var(--burgundy);
+    }
+
+    /* ── MAIN ── */
+    main {
+      max-width: 740px;
+      margin: 0 auto;
+      padding: 3rem 2rem 5rem;
+    }
+
+    /* ── SECTION ── */
+    section {
+      margin-bottom: 3.5rem;
+      animation: fadeUp 0.8s ease both;
+    }
+
+    section:nth-child(1) { animation-delay: 0.1s; }
+    section:nth-child(2) { animation-delay: 0.2s; }
+    section:nth-child(3) { animation-delay: 0.3s; }
+    section:nth-child(4) { animation-delay: 0.4s; }
+    section:nth-child(5) { animation-delay: 0.5s; }
+    section:nth-child(6) { animation-delay: 0.6s; }
+    section:nth-child(7) { animation-delay: 0.7s; }
+
+    .section-header {
+      display: flex;
+      align-items: baseline;
+      gap: 1rem;
+      margin-bottom: 1.2rem;
+      padding-bottom: 0.6rem;
+      border-bottom: 1px solid var(--rule);
+    }
+
+    .section-numeral {
+      font-family: 'Uncial Antiqua', serif;
+      font-size: 1.1rem;
+      color: var(--gold2);
+      flex-shrink: 0;
+    }
+
+    h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.25rem, 3vw, 1.55rem);
+      font-weight: 600;
+      color: var(--burgundy);
+      letter-spacing: 0.02em;
+      line-height: 1.2;
+    }
+
+    p {
+      font-size: clamp(1rem, 2vw, 1.1rem);
+      font-weight: 400;
+      color: var(--ink-light);
+      margin-bottom: 0.9rem;
+    }
+    p:last-child { margin-bottom: 0; }
+
+    /* ── NOTICE CARDS ── */
+    .notice {
+      background: linear-gradient(135deg, rgba(237,230,214,0.8), rgba(226,217,198,0.6));
+      border: 1px solid rgba(201,169,110,0.3);
+      border-left: 3px solid var(--burgundy);
+      border-radius: 0 4px 4px 0;
+      padding: 1.4rem 1.6rem;
+      margin-bottom: 1.4rem;
+      position: relative;
+    }
+    .notice:last-child { margin-bottom: 0; }
+
+    .notice-label {
+      font-size: 0.72rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: var(--burgundy);
+      margin-bottom: 0.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .notice-label::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: rgba(139,26,26,0.15);
+    }
+
+    .notice p {
+      font-size: 1rem;
+      line-height: 1.7;
+    }
+
+    /* ── FEATURES GRID ── */
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+      margin-top: 1.2rem;
+    }
+
+    .feature {
+      background: rgba(237,230,214,0.6);
+      border: 1px solid rgba(201,169,110,0.25);
+      border-radius: 4px;
+      padding: 1.1rem 1.2rem;
+    }
+
+    .feature-icon {
+      font-size: 1.4rem;
+      margin-bottom: 0.4rem;
+      display: block;
+    }
+
+    .feature-title {
+      font-weight: 600;
+      font-size: 1rem;
+      color: var(--burgundy);
+      margin-bottom: 0.3rem;
+    }
+
+    .feature p {
+      font-size: 0.92rem;
+      line-height: 1.55;
+      color: var(--ink-light);
+    }
+
+    /* ── DROPCAP ── */
+    .dropcap::first-letter {
+      font-family: 'Uncial Antiqua', serif;
+      float: left;
+      font-size: 3.4em;
+      line-height: 0.8;
+      margin: 0.05em 0.12em 0 0;
+      color: var(--burgundy);
+    }
+
+    /* ── DIVIDER ── */
+    .divider {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin: 2.5rem 0;
+      color: var(--gold2);
+      font-size: 0.9rem;
+      letter-spacing: 0.2em;
+    }
+    .divider::before, .divider::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: linear-gradient(to right, transparent, var(--gold), transparent);
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      text-align: center;
+      padding: 2.5rem 2rem 3rem;
+      border-top: 1px solid var(--rule);
+      background: rgba(226,217,198,0.3);
+    }
+
+    footer p {
+      font-size: 0.88rem;
+      color: var(--ink-light);
+      opacity: 0.75;
+      margin-bottom: 0.3rem;
+    }
+
+    footer a {
+      color: var(--burgundy);
+      text-decoration: none;
+      border-bottom: 1px solid rgba(139,26,26,0.3);
+    }
+    footer a:hover { border-bottom-color: var(--burgundy); }
+
+    .footer-cross {
+      font-family: 'Uncial Antiqua', serif;
+      font-size: 1.5rem;
+      color: var(--gold2);
+      opacity: 0.5;
+      margin-bottom: 1rem;
+      display: block;
+    }
+
+    /* ── ANIMATIONS ── */
+    @keyframes fadeDown {
+      from { opacity: 0; transform: translateY(-16px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to   { opacity: 1; }
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 520px) {
+      main { padding: 2rem 1.2rem 4rem; }
+      .notice { padding: 1.1rem 1.2rem; }
+      .features { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <span class="cross">✠</span>
+    <h1 class="app-name">Sanctus</h1>
+    <p class="app-tagline">A companion for the Traditional Latin Mass</p>
+    <div class="header-rule"><span>✦</span></div>
+  </header>
+
+  <nav>
+    <a href="#about">About</a>
+    <a href="#features">Features</a>
+    <a href="#independence">Independence</a>
+    <a href="#accuracy">Liturgical Accuracy</a>
+    <a href="#fasting">Fasting</a>
+    <a href="#alarms">Alarms</a>
+    <a href="#data">Data Source</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <main>
+
+    <!-- ABOUT -->
+    <section id="about">
+      <div class="section-header">
+        <span class="section-numeral">I</span>
+        <h2>About Sanctus</h2>
+      </div>
+      <p class="dropcap">Sanctus is a devotional companion app for the Traditional Latin Mass (Extraordinary Form of the Roman Rite), built for the faithful who love the ancient liturgy and wish to pray with it more deeply each day.</p>
+      <p>The app provides the full liturgical calendar for 2026 according to the 1962 Roman Rite, including daily propers — Introit, Collect, Epistle, and Gospel — in both Latin and English, fully offline. It also includes the Holy Rosary with full prayers in Latin and English, Stations of the Cross, the Divine Mercy Chaplet, sacred alarm sounds, and daily fasting guidance.</p>
+      <p>Sanctus is published by <strong>StaticLine Logistics Group LLC</strong>, a Florida limited liability company. Enrollment ID: 2MCMK78V64.</p>
+    </section>
+
+    <!-- FEATURES -->
+    <section id="features">
+      <div class="section-header">
+        <span class="section-numeral">II</span>
+        <h2>What's Included</h2>
+      </div>
+      <div class="features">
+        <div class="feature">
+          <span class="feature-icon">📖</span>
+          <div class="feature-title">Daily Propers</div>
+          <p>Introit, Collect, Epistle & Gospel for every day of 2026. Latin and English, side by side. Fully offline.</p>
+        </div>
+        <div class="feature">
+          <span class="feature-icon">📅</span>
+          <div class="feature-title">Liturgical Calendar</div>
+          <p>1962 feast days, ranks, vestment colors, seasons, and saint cards with biographies and prayers.</p>
+        </div>
+        <div class="feature">
+          <span class="feature-icon">✠</span>
+          <div class="feature-title">Holy Rosary</div>
+          <p>All four mystery sets with full prayers in Latin and English. Mystery auto-selected by day of week and liturgical season.</p>
+        </div>
+        <div class="feature">
+          <span class="feature-icon">🔔</span>
+          <div class="feature-title">Sacred Alarms</div>
+          <p>Angelus Bells, Gregorian Introit, Pipe Organ, or Church Bells. Set once, repeat daily.</p>
+        </div>
+        <div class="feature">
+          <span class="feature-icon">✝️</span>
+          <div class="feature-title">Devotions</div>
+          <p>Stations of the Cross, Divine Mercy Chaplet, Morning Offering, Angelus, and more.</p>
+        </div>
+        <div class="feature">
+          <span class="feature-icon">⚖️</span>
+          <div class="feature-title">Fasting Guide</div>
+          <p>Toggle between 1962 and 1983 fasting disciplines. Daily alerts on the calendar.</p>
+        </div>
+      </div>
+    </section>
+
+    <div class="divider">✦ &nbsp; Important Notices &nbsp; ✦</div>
+
+    <!-- INDEPENDENCE -->
+    <section id="independence">
+      <div class="section-header">
+        <span class="section-numeral">III</span>
+        <h2>Independence Notice</h2>
+      </div>
+      <div class="notice">
+        <div class="notice-label">Independence</div>
+        <p>Sanctus is an independent devotional tool created by a lay Catholic developer. It is <strong>not affiliated with, endorsed by, sponsored by, or acting on behalf of</strong> the Roman Catholic Church, the Holy See, any diocese, religious order, priestly society, or any other ecclesiastical authority.</p>
+        <p>No priest, bishop, or official Church body has reviewed or approved the content of this application. All decisions regarding the content, features, and design of Sanctus rest solely with StaticLine Logistics Group LLC.</p>
+      </div>
+    </section>
+
+    <!-- LITURGICAL ACCURACY -->
+    <section id="accuracy">
+      <div class="section-header">
+        <span class="section-numeral">IV</span>
+        <h2>Liturgical Accuracy</h2>
+      </div>
+      <div class="notice">
+        <div class="notice-label">Liturgical Accuracy</div>
+        <p>Every effort has been made to present the propers, calendar, and devotional texts accurately according to the 1962 Roman Missal. However, <strong>this app is not a substitute for a certified hand missal</strong>, a printed ordo, or the guidance of a priest.</p>
+        <p>Errors may exist. For all matters pertaining to the liturgical celebration of Holy Mass, the administration of sacraments, or questions of rubrical practice, <strong>always defer to your pastor, chaplain, or confessor</strong>.</p>
+        <p>Sanctus is intended as a personal devotional aid, not an authoritative liturgical reference.</p>
+      </div>
+    </section>
+
+    <!-- FASTING -->
+    <section id="fasting">
+      <div class="section-header">
+        <span class="section-numeral">V</span>
+        <h2>Fasting Guidance</h2>
+      </div>
+      <div class="notice">
+        <div class="notice-label">1962 Discipline</div>
+        <p>The 1962 fasting discipline reflects the stricter pre-conciliar rules, including Ember Days, Vigil fasts, and the full Lenten fast. This information is provided for general reference and historical understanding.</p>
+      </div>
+      <div class="notice">
+        <div class="notice-label">1983 Discipline</div>
+        <p>The 1983 discipline reflects the current Code of Canon Law (canons 1249–1253), which requires fasting on Ash Wednesday and Good Friday, and abstinence from meat on Fridays of Lent.</p>
+      </div>
+      <div class="notice">
+        <div class="notice-label">Important — Please Read</div>
+        <p>The fasting information in Sanctus is for <strong>general reference only</strong>. It does not constitute medical advice, spiritual direction, canonical advice, or a binding determination of your personal obligations. StaticLine Logistics Group LLC makes no representations that any fasting schedule is appropriate for any individual user.</p>
+        <p><strong>Do not fast without first consulting a licensed physician</strong> if any of the following apply to you:</p>
+        <ul style="margin: 0.6rem 0 0.8rem 1.4rem; line-height: 1.9;">
+          <li>Diabetes or any condition affecting blood sugar regulation</li>
+          <li>Pregnancy, nursing, or the possibility of pregnancy</li>
+          <li>Any prescription or over-the-counter medication that must be taken with food</li>
+          <li>A history of disordered eating, including anorexia or bulimia</li>
+          <li>Heart disease, kidney disease, or any chronic illness</li>
+          <li>Any other condition your physician has advised requires regular food intake</li>
+        </ul>
+        <p>Individual fasting obligations are also affected by age, state in life, and the customs of your community. <strong>Please consult your confessor or spiritual director</strong> for guidance on your personal obligations. This app cannot make that determination for you.</p>
+        <p style="font-size:0.92rem; opacity:0.75; margin-top:0.6rem;">StaticLine Logistics Group LLC expressly disclaims all liability for any adverse health outcome arising from the use of or reliance on the fasting information provided in this application.</p>
+      </div>
+    </section>
+
+    <!-- ALARMS -->
+    <section id="alarms">
+      <div class="section-header">
+        <span class="section-numeral">VI</span>
+        <h2>Alarm Reliability</h2>
+      </div>
+      <div class="notice">
+        <div class="notice-label">iOS Notification Limitations — Please Read</div>
+        <p>Sacred alarms in Sanctus rely on Apple's iOS notification system. <strong>Notifications may be delayed or suppressed</strong> by Focus modes (including Do Not Disturb and Sleep mode), Low Power Mode, battery optimization, system interruptions, or other device conditions entirely outside the app's control.</p>
+        <p><strong>Sanctus cannot guarantee the delivery of any alarm or notification at the scheduled time.</strong> This is a fundamental limitation of the iOS platform, not a bug.</p>
+        <p><strong>Do not rely solely on Sanctus as your only alarm for any time-sensitive obligation</strong>, including but not limited to:</p>
+        <ul style="margin: 0.6rem 0 0.8rem 1.4rem; line-height: 1.9;">
+          <li>Waking for work, employment, or professional obligations</li>
+          <li>Medical appointments or time-sensitive medication</li>
+          <li>Travel, flights, or scheduled transportation</li>
+          <li>Any obligation where failure to appear on time has serious consequences</li>
+        </ul>
+        <p>Always use your device's native Clock app or a dedicated alarm clock as a backup. Sanctus is a devotional aid, not a mission-critical alarm system.</p>
+        <p style="font-size:0.92rem; opacity:0.75; margin-top:0.6rem;">StaticLine Logistics Group LLC expressly disclaims all liability for any consequence — including missed work, missed appointments, or any other loss — arising from a failure of alarm delivery.</p>
+      </div>
+    </section>
+
+    <!-- DATA SOURCE -->
+    <section id="data">
+      <div class="section-header">
+        <span class="section-numeral">VII</span>
+        <h2>Data Source</h2>
+      </div>
+      <div class="notice">
+        <div class="notice-label">Missale Meum</div>
+        <p>All liturgical propers (Introit, Collect, Epistle, Gospel) are sourced from <strong>Missale Meum</strong> (<a href="https://www.missalemeum.com" target="_blank" rel="noopener">missalemeum.com</a>), an independent lay apostolate dedicated to making the propers of the Traditional Latin Mass accessible online.</p>
+        <p>Sanctus is grateful for the work of Missale Meum and acknowledges their contribution to the preservation and accessibility of the ancient Roman Rite. Propers are cached offline within the app and do not require an internet connection at runtime.</p>
+        <p>Sanctus is not affiliated with or endorsed by Missale Meum.</p>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact">
+      <div class="section-header">
+        <span class="section-numeral">VIII</span>
+        <h2>Contact & Support</h2>
+      </div>
+      <p>For support, questions, or to report a liturgical error, please contact:</p>
+      <p>
+        <strong>StaticLine Logistics Group LLC</strong><br />
+        <a href="mailto:contact@staticlinegroup.com">contact@staticlinegroup.com</a><br />
+        Ocala, Florida
+      </p>
+      <p style="margin-top:1.2rem;">
+        <a href="https://sanctusstatic.github.io/privacy.html">Privacy Policy</a>
+        &nbsp;·&nbsp;
+        <a href="https://sanctusstatic.github.io">sanctusstatic.github.io</a>
+      </p>
+    </section>
+
+  </main>
+
+  <footer>
+    <span class="footer-cross">✠</span>
+    <p>Sanctus: Traditional Latin Mass</p>
+    <p>© 2026 StaticLine Logistics Group LLC · Ocala, Florida</p>
+    <p style="margin-top:0.8rem; font-style:italic; opacity:0.6;">
+      "Introibo ad altare Dei" — Psalm 42
+    </p>
+  </footer>
+
+</body>
+</html>
